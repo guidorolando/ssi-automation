@@ -1,2 +1,2 @@
 # ssi-automation
-automation
+automation -develop

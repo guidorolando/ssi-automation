@@ -1,31 +1,34 @@
 package ssiTest;
 
+import automation.Assignment;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pageObject.Home;
 import testSetup.TestBase;
 
 public class TestExample extends TestBase{
     private WebDriver driver;
+    private Home home;
+    private Assignment assign;
 
     @BeforeClass
     public void init(){
-        driver=getWebDriver();}
+        driver=getWebDriver();
+        home = PageFactory.initElements(driver, Home.class);
+        assign = PageFactory.initElements(driver, Assignment.class);
+    }
 
     @Test
-    public void TestCero(){
-        System.out.println("este es el inicio del test");
+    public void testGoToHomeSsi(){
+        home.clickHomeTab();
+        System.out.println("click en home");
     }
-    @Test(dependsOnMethods = {"TestCero"})
-    public void testUno(){
-        System.out.println("insertar datos");
+    @Test(dependsOnMethods = {"testGoToHomeSsi"})
+    public void testGoToAssignment(){
+        assign.goToAssignmentTab();
+        System.out.println("click en Assignment");
     }
-    @Test(dependsOnMethods = {"testUno"})
-    public void testAlfa(){
-        System.out.println("actualizar datos");
-    }
-    @Test(dependsOnMethods = {"testAlfa"})
-    public void testBeta(){
-        System.out.println("borrar datos");
-    }
+
 }

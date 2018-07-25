@@ -3,11 +3,13 @@ package testSetup;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+@Listeners(ExtentTestNGITestListener.class)
 public class TestBase {
     private WebDriver driver;
     private Properties props;
@@ -73,5 +75,11 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.get(appURL);
         return driver;
+    }
+
+    public void tearDown(){
+        if (driver !=null){
+            driver.quit();
+        }
     }
 }

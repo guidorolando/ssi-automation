@@ -4,12 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import pageObject.AssignmentPage;
 
-public class Assignment {
+public class Accident {
 
     private WebDriver driver;
     private AssignmentPage assign;
 
-    public Assignment(WebDriver driver){
+    public Accident(WebDriver driver){
         this.driver = driver;
         assign = PageFactory.initElements(driver, AssignmentPage.class);
     }

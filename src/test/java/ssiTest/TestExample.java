@@ -1,6 +1,6 @@
 package ssiTest;
 
-import automation.Assignment;
+import automation.Accident;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;
@@ -11,13 +11,13 @@ import testSetup.TestBase;
 public class TestExample extends TestBase{
     private WebDriver driver;
     private Home home;
-    private Assignment assign;
+    private Accident assign;
 
     @BeforeClass
     public void init(){
         driver=getWebDriver();
         home = PageFactory.initElements(driver, Home.class);
-        assign = PageFactory.initElements(driver, Assignment.class);
+        assign = PageFactory.initElements(driver, Accident.class);
     }
 
     @Test

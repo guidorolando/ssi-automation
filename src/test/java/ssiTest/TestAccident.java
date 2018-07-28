@@ -29,16 +29,16 @@ public class TestAccident extends TestBase{
     @Test
     public void testGoToHomeSsi(){
         home.clickHomeTab();
-        WaitAppResults.waitForAjax(driver);
+        //WaitAppResults.waitForAjax(driver);
         System.out.println("click en home");
     }
 
     @Test(dependsOnMethods = {"testGoToHomeSsi"})
     public void testGoToAccident(){
         home.clickAccidentTab();
-        WaitAppResults.waitForAjax(driver);
-        WaitAppResults.waitForAjax(driver);
-        WaitAppResults.waitForAjax(driver);
+        //WaitAppResults.waitForAjax(driver);
+        //WaitAppResults.waitForAjax(driver);
+        //WaitAppResults.waitForAjax(driver);
         accident.createAccident();
         System.out.println("Accident in progress");
     }
@@ -58,7 +58,7 @@ public class TestAccident extends TestBase{
         employee.setCi("111111111");
         employee.setGender("MALE");
         employee.setAddress("sacaba");
-        employee.setBirthDate("2018-01-01");
+        employee.setBirthDate("01-01-2018");
         employee.setPhone("77777777");
         employee.setEmail("guido@gmail.com");
         employee.setEmployeeType("Obrero");

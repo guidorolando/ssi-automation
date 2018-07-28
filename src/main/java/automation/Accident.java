@@ -20,16 +20,16 @@ public class Accident {
 
     public void createAccident(){
         accident.clickButtonCreate();
-        WaitAppResults.waitForAjax(driver);
-        WaitAppResults.waitForAjax(driver);
+        //WaitAppResults.waitForAjax(driver);
+        //WaitAppResults.waitForAjax(driver);
         accidentPopupPage.selectEmployee("carmen guzman 7676764");
         accidentPopupPage.selectAccidentDate("06062018");
         accidentPopupPage.setAccidentHr("0000");
         accidentPopupPage.selectAccidentDay("Monday");
         accidentPopupPage.selectIncidentType("Alta");
-        WaitAppResults.waitForAjax(driver);
+        //WaitAppResults.waitForAjax(driver);
         accidentPopupPage.selectIncidentAgent("Medios de transporte");
-        WaitAppResults.waitForAjax(driver);
+        //WaitAppResults.waitForAjax(driver);
         accidentPopupPage.setAffectParts("some explain");
         accidentPopupPage.setAccidentSite("some explain");
         accidentPopupPage.clickCreateAcc();

@@ -2,6 +2,7 @@ package testSetup;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 
@@ -51,10 +52,9 @@ public class TestBase {
             if(browserType.equals("chrome")){
                 driver=initChromeDriver(appURL);
             }
-            /*else if (browserType.equals("firefox")){
+            else if (browserType.equals("firefox")){
                 driver=initFirefoxDriver(appURL);
             }
-            */
             else {
                 driver = initIExplorer(appURL);
             }
@@ -72,6 +72,16 @@ public class TestBase {
         String path = getClass().getResource("/driver/chromedriver.exe").getFile();
         System.setProperty("webdriver.chrome.driver", path);
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(appURL);
+        return driver;
+    }
+
+    private WebDriver initFirefoxDriver(String appURL) {
+        String pathDriver = "resources/driver/gecko/geckodriver";
+        String path = getClass().getResource("/driver/gecko/geckodriver").getFile();
+        System.setProperty("webdriver.gecko.driver", path);
+        driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get(appURL);
         return driver;

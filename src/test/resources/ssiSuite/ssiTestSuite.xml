@@ -3,7 +3,7 @@
 <suite name="ssi-test" parallel="false">
     <test verbose="1" name="ssi-test" annotations="JDK">
         <classes>
-            <class name="ssiTest.TestExample"/>
+            <class name="ssiTest.TestAccident"/>
         </classes>
     </test>
 </suite>

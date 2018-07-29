@@ -32,6 +32,12 @@ public class AccidentPopupPage {
     @FindBy(css = "#accidentSiteId")
     private WebElement accidentSiteText;
 
+    @FindBy(id = "addIncidentAgentId")
+    private WebElement addIncidentAgent;
+
+    @FindBy(id = "addIncidentTypeId")
+    private WebElement addIncidentType;
+
     @FindBy(css = ".btn-primary")
     private WebElement buttonCreate;
 
@@ -79,6 +85,14 @@ public class AccidentPopupPage {
         accidentSiteText.sendKeys(Keys.TAB);
     }
 
+    public void clickAddIncidentType() {
+        addIncidentType.click();
+    }
+
+    public void clickAddIncidentAgent() {
+        addIncidentAgent.click();
+    }
+
     public void clickCreateAcc(){
         buttonCreate.click();
     }
@@ -121,5 +135,13 @@ public class AccidentPopupPage {
 
     public WebElement getButtonCancel() {
         return ButtonCancel;
+    }
+
+    public WebElement getAddIncidentAgent() {
+        return addIncidentAgent;
+    }
+
+    public WebElement getAddIncidentType() {
+        return addIncidentType;
     }
 }

@@ -1,10 +1,12 @@
 package ssiTest;
 
 import automation.Accident;
+import automation.IncidentAgent;
 import automation.commonWait.WaitAppResults;
 import automation.Employee;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObject.Home;
@@ -16,6 +18,7 @@ public class TestAccident extends TestBase{
     private Accident accident;
     private Accident assign;
     private Employee employee;
+    private IncidentAgent incidentAgent;
 
     @BeforeClass
     public void init(){
@@ -24,6 +27,7 @@ public class TestAccident extends TestBase{
         accident = PageFactory.initElements(driver, Accident.class);
         assign = PageFactory.initElements(driver, Accident.class);
         employee = PageFactory.initElements(driver, Employee.class);
+        incidentAgent = PageFactory.initElements(driver, IncidentAgent.class);
     }
 
     @Test
@@ -41,6 +45,7 @@ public class TestAccident extends TestBase{
         //WaitAppResults.waitForAjax(driver);
         accident.createAccident();
         System.out.println("Accident in progress");
+
     }
 
     @Test(dependsOnMethods = {"testGoToHomeSsi"})
@@ -65,6 +70,13 @@ public class TestAccident extends TestBase{
         employee.setSalary("12");
         employee.clickCreate();
         System.out.println("open popup create employee");
+    }
+
+    @Test
+    public void testAddIncidentAgent() {
+        home.clickAccidentTab();
+        accident.openPopupCreateAccident();
+        incidentAgent.createIncidentAgent("new Incident Agent");
     }
 
 }

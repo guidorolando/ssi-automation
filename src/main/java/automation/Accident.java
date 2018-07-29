@@ -34,5 +34,7 @@ public class Accident {
         accidentPopupPage.setAccidentSite("some explain");
         accidentPopupPage.clickCreateAcc();
     }
-
+    public void openPopupCreateAccident() {
+        accident.clickButtonCreate();
+    }
 }
